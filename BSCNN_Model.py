@@ -4,28 +4,28 @@ import torch.nn.functional as F
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
-        self.block1_conv1 = nn.Conv2d(3, 8, 3)
-        self.block1_conv2 = nn.Conv2d(8, 8, 3)
-        self.block1_pool = nn.MaxPool2d(2, 2)
+        self.block1_conv1 = nn.Conv2d(3, 8, 3, padding=1)
+        self.block1_conv2 = nn.Conv2d(8, 8, 3, padding=1)
+        self.block1_pool = nn.MaxPool2d(2, stride=2)
 
-        self.block2_conv1 = nn.Conv2d(8, 16, 3)
-        self.block2_conv2 = nn.Conv2d(16, 16, 3)
-        self.block2_pool = nn.MaxPool2d(2, 2)
+        self.block2_conv1 = nn.Conv2d(8, 16, 3, padding=1)
+        self.block2_conv2 = nn.Conv2d(16, 16, 3, padding=1)
+        self.block2_pool = nn.MaxPool2d(2, stride=2)
 
-        self.block3_conv1 = nn.Conv2d(16, 16, 3)
-        self.block3_conv2 = nn.Conv2d(16, 16, 3)
-        self.block3_conv3 = nn.Conv2d(16, 16, 3)
-        self.block3_pool = nn.MaxPool2d(2, 2)
+        self.block3_conv1 = nn.Conv2d(16, 16, 3, padding=1)
+        self.block3_conv2 = nn.Conv2d(16, 16, 3, padding=1)
+        self.block3_conv3 = nn.Conv2d(16, 16, 3, padding=1)
+        self.block3_pool = nn.MaxPool2d(2, stride=2)
 
-        self.block4_conv1 = nn.Conv2d(16, 16, 3)
-        self.block4_conv2 = nn.Conv2d(16, 16, 3)
-        self.block4_conv3 = nn.Conv2d(16, 16, 3)
-        self.block4_pool = nn.MaxPool2d(2, 2)
+        self.block4_conv1 = nn.Conv2d(16, 16, 3, padding=1)
+        self.block4_conv2 = nn.Conv2d(16, 16, 3, padding=1)
+        self.block4_conv3 = nn.Conv2d(16, 16, 3, padding=1)
+        self.block4_pool = nn.MaxPool2d(2, stride=2)
 
-        self.block5_conv1 = nn.Conv2d(16, 8, 3)
-        self.block5_conv2 = nn.Conv2d(8, 8, 3)
-        self.block5_conv3 = nn.Conv2d(8, 1, 3)
-        self.block5_pool = nn.MaxPool2d(2, 2)
+        self.block5_conv1 = nn.Conv2d(16, 8, 3, padding=1)
+        self.block5_conv2 = nn.Conv2d(8, 8, 3, padding=1)
+        self.block5_conv3 = nn.Conv2d(8, 1, 3, padding=1)
+        self.block5_pool = nn.MaxPool2d(2, stride=2)
 
 
     def forward(self, x):
@@ -50,6 +50,6 @@ class Net(nn.Module):
         # block5
         x = F.relu(self.block5_conv1(x))
         x = F.relu(self.block5_conv2(x))
-        x = self.block5_pool(F.relu(self.block5_conv3(x)))
+        x = self.block5_pool(F.sigmoid(self.block5_conv3(x)))
 
         return x
