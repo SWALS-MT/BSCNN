@@ -17,6 +17,6 @@
 ● ネットワーク構造はVGG16に類似しているが、出力がクラス分類ではなく特徴マップであるため、出力層チャンネル数は1  
 ● Batch Normalization入れ忘れた。（Dropoutと迷っている）  
 
-# Training.py
+# BSCNN_CreateModel.py
 ● 学習を行うことができる。  
 ● 学習後はLossグラフ表示、Lossのnpzファイルとモデルの保存も行う。（check.pyにて再度グラフ表示可能）  
