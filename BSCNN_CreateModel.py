@@ -124,6 +124,7 @@ def eval():
     running_loss = 0.0
     correct = 0.0
     data_count = 0
+    # Train Stop
     with torch.no_grad():
         # データの読み込む順番をランダムに変更
         random.shuffle(number_list)
@@ -134,7 +135,7 @@ def eval():
             # データ取得(少量ずつ)
             print('Loading Images now... ( ' + str(miniblock_count + 1) +
                   ' / ' + str(miniblocks) + ' )')
-            images, anns = ImageLoaderFromCOCO(miniblocks, miniblock_num, annFiles=annFiles_val, ImageDir=ImageDir_train)
+            images, anns = ImageLoaderFromCOCO(miniblocks, miniblock_num, annFiles=annFiles_val, ImageDir=ImageDir_val)
             # Pytorch用データセットの作成
             images = torch.from_numpy(images)
             anns = torch.from_numpy(anns)
@@ -144,8 +145,8 @@ def eval():
                 data.DataLoader(dataset=dataset_val, batch_size=minibatch_size, shuffle=True)
 
             for step, (images, anns) in enumerate(dataloader_val, 1):
-                images.to(device)
-                anns.to(device)
+                images = images.to(device)
+                anns = anns.to(device)
 
                 output = model(images)
                 loss = criterion(output, anns)
@@ -171,7 +172,7 @@ if __name__ == '__main__':
         train_acc_list.append(train_acc)
         val_loss_list.append(val_loss)
         val_acc_list.append(val_acc)
-        print('epoch %d, loss: %.4f val_loss: %.4f val_acc: %.4f' % (epoch, train_loss, val_loss, val_acc))
+        print('epoch %d, loss: %.4f val_loss: %.4f val_acc: %.4f' % (epoch + 1, train_loss, val_loss, val_acc))
 
     # modelとグラフの保存
     np.savez('train_loss_acc_backup.npz', loss=np.array(train_loss_list), acc=np.array(train_acc_list))

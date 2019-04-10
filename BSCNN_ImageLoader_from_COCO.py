@@ -2,14 +2,14 @@ import numpy as np
 import cv2
 from pycocotools.coco import COCO
 
-data_dir = '../dataset/coco/'
+# data_dir = '../dataset/coco/'
 # data_type_val = 'val2014'
 # annFiles = data_dir + '2014/annotations/instances_' + data_type_val + '.json'
 # ImageDir = data_dir + '2014/valimages/'
 
-data_type_train = 'train2014'
-annFiles = data_dir + '2014/annotations/instances_' + data_type_train + '.json'
-ImageDir = data_dir + '2014/trainimages/'
+# data_type_train = 'train2014'
+# annFiles = data_dir + '2014/annotations/instances_' + data_type_train + '.json'
+# ImageDir = data_dir + '2014/trainimages/'
 
 
 # 入力:(総ブロック数, 読み込むブロックの番号)
