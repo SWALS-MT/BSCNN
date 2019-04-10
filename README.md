@@ -1,6 +1,4 @@
 # BSCNN
-ー未完成
-
 ● セグメンテーション画像を大雑把に捉えることで特徴マップを高速に抽出しようとしている。 
 
 # BSCNN_ImageLoader_from_COCO.py
@@ -12,7 +10,7 @@
 # BSCNN_Model.py
 ● CNNのモデルをここに設定。  
 ● ネットワーク構造はVGG16に類似しているが、出力がクラス分類ではなく特徴マップであるため、出力層チャンネル数は1  
-● Batch Normalization入れ忘れた。（Dropoutと迷っている）  
+● Batch Normalizationを各ブロックごとに実施
 
 # BSCNN_CreateModel.py
 ● 学習を行うことができる。  
