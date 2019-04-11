@@ -1,5 +1,7 @@
 # BSCNN
-● セグメンテーション画像を大雑把に捉えることで特徴マップを高速に抽出しようとしている。 
+セグメンテーション画像を大雑把に捉えることで特徴マップを高速に抽出しようとしている。 
+![Original_screenshot_10 04 2019](https://user-images.githubusercontent.com/47411597/55931351-0f9bdf00-5c60-11e9-9bf1-73c39991b4bb.png)
+![Output_screenshot_10 04 2019](https://user-images.githubusercontent.com/47411597/55931356-13c7fc80-5c60-11e9-8b4c-9b45fbcef5cb.png)
 
 # BSCNN_ImageLoader_from_COCO.py
 ● MicroSoft COCOのデータセットからデータの読み込みを行う。（ラベルはPersonに設定してある）  
