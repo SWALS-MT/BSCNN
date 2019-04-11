@@ -18,7 +18,7 @@
 ● TrainデータとValidationデータに対するLossとAccuracyを求めるパートを追加。
 
 # Result
-● MicroSoft COCO2014のデータセットを用いて学習を行った。  
+MicroSoft COCO2014のデータセットを用いて学習を行った。  
 **Loss**  
   10エポックをピークにValidationのLossが増加傾向にある。  
 ![BSCNN_Loss](https://user-images.githubusercontent.com/47411597/55868230-03137a00-5bbf-11e9-8f3a-087b18ab6bdf.png)  
