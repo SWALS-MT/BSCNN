@@ -24,6 +24,6 @@ MicroSoft COCO2014のデータセットを用いて学習を行った。
   10エポックをピークにValidationのLossが増加傾向にある。  
 ![BSCNN_Loss](https://user-images.githubusercontent.com/47411597/55868230-03137a00-5bbf-11e9-8f3a-087b18ab6bdf.png)  
 **Accuracy**  
-  計算方法：出力と入力の差分を取り、（誤差5%未満の要素数）／（配列の全要素数）によって求めた。　　
+  計算方法：出力と入力の差分を取り、（誤差5%未満の要素数）／（配列の全要素数）によって求めた。  
   なぜかLossが下がり始める10エポックを超えてもAccuracyが増加傾向に。  
 ![BSCNN_Accuracy](https://user-images.githubusercontent.com/47411597/55868224-fc850280-5bbe-11e9-9ab8-01689becf725.png)
